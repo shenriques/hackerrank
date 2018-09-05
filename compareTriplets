@@ -1,0 +1,28 @@
+public class Solution {
+
+    // Complete the compareTriplets function below.
+    
+    // takes two lists
+    static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
+        
+        List<Integer> aliceArray = a;
+        List<Integer> bobArray = b;
+        int aliceScore = 0;
+        int bobScore = 0;
+        
+        for (int x = 0, y = 0; x < aliceArray.size(); x++, y++)
+        {
+            int aliceNum = aliceArray.get(x);
+            int bobNum = bobArray.get(y);
+            
+            if (aliceNum > bobNum) 
+            {
+                aliceScore++;
+            } else if (aliceNum < bobNum) {
+               bobScore++; 
+            } 
+        }
+        
+        List<Integer> finalScore = Arrays.asList(aliceScore, bobScore);
+        return finalScore;
+     }
